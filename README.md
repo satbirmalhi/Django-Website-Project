@@ -29,28 +29,34 @@
     * `mkdir requirements`
     * `cd requirements`
     * `touch prod.txt` and `touch dev.txt`
-    * Go back to main folder: `cd ..`
+    
 2. Install Django: `pip install Django`
 3. Copy local packages to prod.txt: `pip freeze --local > prod.txt`
 4. Copy all the prod requirements to dev.txt: `echo '-r prod.txt' > dev.txt`
 5. Check: `cat prod.txt` and `cat dev.txt`
-6. Create Dajango project: `djando-admin startproject {name}` and then arrange your folder. 
+6. Create Dajango project: `djando-admin startproject {Website_name}` . Make sure to run this command in Satbir-Website folder:
+7. Now arrange folders as list below. 
 ------------------------------------------------------------------------------------
-##### List the folder and flies of project at this stage:
-    * Satbir-Website 
-        * Website
-            * _init_py
-            * asgi.py
-            * settings.py
-            * urls.py
-            * wsgi.py
-        *requirements
-        * manange.py
+##### The updated project directory should look like this:
+* Satbir-Website 
+    * {Website_name}
+        * _init_py
+        * asgi.py
+        * settings.py
+        * urls.py
+        * wsgi.py
+    * requirements
+    * manange.py
 
 ------------------------------------------------------------------------------------
 ##### How to run website on local server
 * `python manage.py runserver `
 
-##### Understing Routes 
-##### Change the views
-##### templates
+##### What are Routes and how to configure.  
+##### Whar are templates? 
+##### Install apps
+##### Confifure Accounts page 
+##### Data migration
+##### Front end 
+##### Developy the your website. 
+##### 
