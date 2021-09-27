@@ -38,8 +38,8 @@
 7. Now arrange folders as list below. 
 ------------------------------------------------------------------------------------
 ##### The updated project directory should look like this:
-* Satbir-Website 
-    * {Website_name}
+* MathMeUp-Website 
+    * <Website_name>
         * _init_py
         * asgi.py
         * settings.py
