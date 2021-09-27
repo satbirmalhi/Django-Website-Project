@@ -34,7 +34,7 @@
 3. Copy local packages to prod.txt: `pip freeze --local > prod.txt`
 4. Copy all the prod requirements to dev.txt: `echo '-r prod.txt' > dev.txt`
 5. Check: `cat prod.txt` and `cat dev.txt`
-6. Create Dajango project: `djando-admin startproject {Website_name}` . Make sure to run this command in Satbir-Website folder:
+6. Create Dajango project: `djando-admin startproject {Website_name}` . Make sure to run this command in your website folder:
 7. Now arrange folders as list below. 
 ------------------------------------------------------------------------------------
 ##### The updated project directory should look like this:
@@ -53,12 +53,15 @@
 * `python manage.py runserver `
 ##### Create Makefile file:
 A makefile is a special file, containing shell commands, that you create and name makefile (or Makefile depending upon the system). ... A makefile that works well in one shell may not execute properly in another shell
-* `touch MAKE`
-* Example code to run server with python : 
+* `touch Makefile`
+* Example code to run server with python for Makefile: 
    ```Runserver:
         python manage.py runserver <hostname, example 0.0.0.0:80>```
+* Now go to terminal and start the server with the command: `Make Runserver`
 
 ##### How to create Apps: 
+* 
+
 ##### What are Routes and how to configure.  
 
 ##### Whar are templates? 
