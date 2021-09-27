@@ -51,8 +51,16 @@
 ------------------------------------------------------------------------------------
 ##### How to run website on local server
 * `python manage.py runserver `
+##### Create Makefile file:
+A makefile is a special file, containing shell commands, that you create and name makefile (or Makefile depending upon the system). ... A makefile that works well in one shell may not execute properly in another shell
+* `touch MAKE`
+* Example code to run server with python : 
+   ```Runserver:
+        python manage.py runserver <hostname, example 0.0.0.0:80>```
 
+##### How to create Apps: 
 ##### What are Routes and how to configure.  
+
 ##### Whar are templates? 
 ##### Install apps
 ##### Confifure Accounts page 
