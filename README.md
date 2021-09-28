@@ -58,17 +58,21 @@ A makefile is a special file, containing shell commands, that you create and nam
    ```Runserver:
         python manage.py runserver <hostname, example 0.0.0.0:80>```
 * Now go to terminal and start the server with the command: `Make Runserver`
+##### Hide your SECRET_KEY:
+  
+
 
 ##### Create basic folder and files for templating
 * Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps'
 * Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates'
-    * In templates create the following files: 'touch about.html','touch base.html','touch contact.html','touch footer.html','touch index.html','touch navbar.html'
+    * In templates create the following files: `touch about.html`,`touch base.html`,`touch contact.html`,`touch footer.html`,`touch index.html`,`touch navbar.html`
 
-##### How to create App: 
-* Cd into apps directory 
-* Run this commad to create a app named public: 
-* Run this commad to create a app named accounts: 
-* Run this commad to create a app named contact: 
+##### How to create App:
+* `mkdir apps` 
+* Cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name: __init__.py.
+* Run this commad to create a app named public: `python3 manage.py startapp public <path to public folder>`
+* Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
+* Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
 ##### The updated project directory should look like this:
 * Website-Project 
     * <MathMeUp_website>
@@ -88,14 +92,12 @@ A makefile is a special file, containing shell commands, that you create and nam
         * dev.txt
     * MathMeUp-env
     * manange.py
-##### Hide your SECRET_KEY:
-
 ##### What are Routes and how to configure.  
 
-##### Whar are templates? 
-##### Install apps
+
+##### Static front: 
+
 ##### Confifure Accounts page 
 ##### Data migration
-##### Front end 
 ##### Developy the your website. 
 ##### 
