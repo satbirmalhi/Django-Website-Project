@@ -38,8 +38,8 @@
 7. Now arrange folders as list below. 
 ------------------------------------------------------------------------------------
 ##### The updated project directory should look like this:
-* MathMeUp-Website 
-    * <Website_name>
+* Website-Project 
+    * <MathMeUp_website>
         * _init_py
         * asgi.py
         * settings.py
@@ -59,8 +59,36 @@ A makefile is a special file, containing shell commands, that you create and nam
         python manage.py runserver <hostname, example 0.0.0.0:80>```
 * Now go to terminal and start the server with the command: `Make Runserver`
 
-##### How to create Apps: 
-* 
+##### Create basic folder and files for templating
+* Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps'
+* Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates'
+    * In templates create the following files: 'touch about.html','touch base.html','touch contact.html','touch footer.html','touch index.html','touch navbar.html'
+
+##### How to create App: 
+* Cd into apps directory 
+* Run this commad to create a app named public: 
+* Run this commad to create a app named accounts: 
+* Run this commad to create a app named contact: 
+##### The updated project directory should look like this:
+* Website-Project 
+    * <MathMeUp_website>
+        * apps
+            * public 
+            * accounts
+            * contact
+        * templates
+            * about.html, base.html, footer.html, index,html, navbar.html
+        * _init_py
+        * asgi.py
+        * settings.py
+        * urls.py
+        * wsgi.py
+    * requirements
+        * prod.txt
+        * dev.txt
+    * MathMeUp-env
+    * manange.py
+##### Hide your SECRET_KEY:
 
 ##### What are Routes and how to configure.  
 
