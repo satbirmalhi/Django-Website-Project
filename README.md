@@ -38,15 +38,17 @@
 7. Now arrange folders as list below. 
 ------------------------------------------------------------------------------------
 ##### The updated project directory should look like this:
-* Website-Project 
-    * <MathMeUp_website>
-        * _init_py
-        * asgi.py
-        * settings.py
-        * urls.py
-        * wsgi.py
-    * requirements
-    * manange.py
+  ```zsh
+  Website-Project
+    |-- <MathMeUp_website>
+    |   |--_init_py
+    |  |-- asgi.py
+    |   |-- settings.py
+    |   |-- urls.py
+    |   |--wsgi.py
+    |-- requirements
+    |--manange.py
+```
 
 ------------------------------------------------------------------------------------
 ##### How to run website on local server
@@ -59,6 +61,9 @@ A makefile is a special file, containing shell commands, that you create and nam
         python manage.py runserver <hostname, example 0.0.0.0:80>```
 * Now go to terminal and start the server with the command: `Make Runserver`
 ##### Hide your SECRET_KEY:
+1. Install python-dotenv to create a local project environment to store your secret key.
+    `pip install python-dotenv`
+2. 
   
 
 
@@ -74,7 +79,7 @@ A makefile is a special file, containing shell commands, that you create and nam
 * Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
 * Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
 ##### The updated project directory should look like this:
-```bash
+```zsh
  Website-Project 
     |-- <MathMeUp_website>
     |    |-- apps
