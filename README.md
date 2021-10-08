@@ -59,6 +59,7 @@
 ------------------------------------------------------------------------------------
 ##### How to run website on local server
 * `python manage.py runserver `
+    * this command has created a data base with the name db.sqlite3. Copy the name of this data base in .gitignore file. 
 ##### Create Makefile file:
 A makefile is a special file, containing shell commands, that you create and name makefile (or Makefile depending upon the system). ... A makefile that works well in one shell may not execute properly in another shell
 * `touch Makefile`
@@ -70,6 +71,7 @@ A makefile is a special file, containing shell commands, that you create and nam
 1. Install python-dotenv to create a local project environment to store your secret key.
     ```pip install python-dotenv```
 2. Create a .env file in your base directory (where manage.py is).
+
  ```zsh
   Website-Project
     |-- <MathMeUp_website>
@@ -86,6 +88,21 @@ A makefile is a special file, containing shell commands, that you create and nam
     |--manange.py
     |-- README.md
 ```
+3. Add .env to your .gitignore file.
+```echo .env > .gitignore  # Or just open your .gitignore and type in .env```
+4. Add your SECRET_KEY from your settings.py file into the .env file like so (without quotes)
+```
+**Inside of your .env file** 
+SECRET_KEY=qolwvjicds5p53gvojw&a^&c4&16ou7 # <- Example key, SECRET_KEY=yoursecretkey
+```
+5. Inside of your settings.py file, add the following settings:
+```
+from decouple import config
+SECRET_KEY = config('SECRET_KEY')
+```
+
+
+
   
 
 
