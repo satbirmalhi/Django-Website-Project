@@ -68,8 +68,8 @@ A makefile is a special file, containing shell commands, that you create and nam
         python manage.py runserver <hostname, example 0.0.0.0:80>```
 * Now go to terminal and start the server with the command: `Make Runserver`
 ##### Hide your SECRET_KEY:
-1. Install python-dotenv to create a local project environment to store your secret key.
-    ```pip install python-dotenv```
+1. Install python-decouple to create a local project environment to store your secret key.
+    ```pip install python-decouple```
 2. Create a .env file in your base directory (where manage.py is).
 
  ```zsh
@@ -89,7 +89,7 @@ A makefile is a special file, containing shell commands, that you create and nam
     |-- README.md
 ```
 3. Add .env to your .gitignore file.
-```echo .env > .gitignore  # Or just open your .gitignore and type in .env```
+``` open your .gitignore and type in .env```
 4. Add your SECRET_KEY from your settings.py file into the .env file like so (without quotes)
 ```
 **Inside of your .env file** 
@@ -100,12 +100,10 @@ SECRET_KEY=qolwvjicds5p53gvojw&a^&c4&16ou7 # <- Example key, SECRET_KEY=yoursecr
 from decouple import config
 SECRET_KEY = config('SECRET_KEY')
 ```
-
+6. Check if all is working fine: `Make runserver`
 
 
   
-
-
 ##### Create basic folder and files for templating
 * Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps'
 * Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates'
