@@ -19,8 +19,9 @@
 * Check all the package in your global machine: `pip3 list` 
 * Check: `virtualenv --version` 
 * `virtualenv -p python3.9 <name_of_virtualenv>`
-* Activate: `source ./<name_of_virtualenv>/bin/activate`d
+* Activate: `source ./<name_of_virtualenv>/bin/activate`
 * Check which python is active: `which python `
+* Create a gitignore file and copy paste <name_of_virtualenv> in it: `touch .gitignore` `echo "<name_of_virtualenv>" .gitignore`
 * Deactivate when switch to another the application: `deactivate`
 ----------------------------------------------------------------------------------
 ### [Django homepage](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#overview)
@@ -35,19 +36,24 @@
 4. Copy all the prod requirements to dev.txt: `echo '-r prod.txt' > dev.txt`
 5. Check: `cat prod.txt` and `cat dev.txt`
 6. Create Dajango project: `djando-admin startproject {Website_name}` . Make sure to run this command in your website folder:
-7. Now arrange folders as list below. 
+
 ------------------------------------------------------------------------------------
-##### The updated project directory should look like this:
+##### Now arrange folders as list below. 
   ```zsh
   Website-Project
     |-- <MathMeUp_website>
     |   |--_init_py
-    |  |-- asgi.py
+    |   |-- asgi.py
     |   |-- settings.py
     |   |-- urls.py
     |   |--wsgi.py
+    |-- <MathMeUp-env>
     |-- requirements
-    |--manange.py
+        |-- prod.txt
+        |-- dev.txt
+    |--.gitignore
+    |-- manange.py
+    |-- READEME.md
 ```
 
 ------------------------------------------------------------------------------------
@@ -62,8 +68,24 @@ A makefile is a special file, containing shell commands, that you create and nam
 * Now go to terminal and start the server with the command: `Make Runserver`
 ##### Hide your SECRET_KEY:
 1. Install python-dotenv to create a local project environment to store your secret key.
-    `pip install python-dotenv`
-2. 
+    ```pip install python-dotenv```
+2. Create a .env file in your base directory (where manage.py is).
+ ```zsh
+  Website-Project
+    |-- <MathMeUp_website>
+    |   |--_init_py
+    |   |-- asgi.py
+    |   |-- settings.py
+    |   |-- urls.py
+    |   |--wsgi.py
+    |-- <MathMeUp-env>
+    |-- requirements
+    |-- db.sqlite3
+    |-- .env
+    |--.gitignore
+    |--manange.py
+    |-- README.md
+```
   
 
 
@@ -93,11 +115,16 @@ A makefile is a special file, containing shell commands, that you create and nam
     |    |-- settings.py
     |    |-- urls.py
     |    |-- wsgi.py
+    |-- <MathMeUP-env>
     |-- requirements
     |    |-- prod.txt
     |    |-- dev.txt
-    |-- MathMeUp-env
+    |--.gitignore
+    |-- db.sqlite3
+    |--.env
+    |-- Makefile
     |-- manange.py
+    |-- README.md
 ```
 ##### What are Routes and how to configure.  
 
