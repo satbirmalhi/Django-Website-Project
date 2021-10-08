@@ -105,13 +105,13 @@ SECRET_KEY = config('SECRET_KEY')
 
   
 ##### Create basic folder and files for templating
-* Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps'
-* Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates'
+* Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps`
+* Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates`
     * In templates create the following files: `touch about.html`,`touch base.html`,`touch contact.html`,`touch footer.html`,`touch index.html`,`touch navbar.html`
 
 ##### How to create App:
-* `mkdir apps` 
-* Cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name: __init__.py.
+* Cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name:`touch __init__.py`.
+*  Go back to your base directory (where manage.py is).
 * Run this commad to create a app named public: `python3 manage.py startapp public <path to public folder>`
 * Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
 * Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
@@ -120,11 +120,14 @@ SECRET_KEY = config('SECRET_KEY')
  Website-Project 
     |-- <MathMeUp_website>
     |    |-- apps
-    |    |-- public 
-    |    |-- accounts 
-    |    |-- contact
-    |    | templates
-    |       |-- about.html, base.html, footer.html, index,html, navbar.html
+    |        |-- public 
+             |  |- migrations, __init__,admin.py,apps.py,models.py,tests.py,views.py
+    |        |-- accounts 
+             |  |-- migrations, __init__,admin.py,apps.py,models.py,tests.py,views.py,
+    |        |-- contact
+             |  |--|migrations, __init__,admin.py,apps.py,models.py,tests.py,views.py,
+    |    |-- templates
+    |       |-- about.html, base.html, contact.html footer.html, index,html, navbar.html
     |    |-- _init_py
     |    |-- asgi.py
     |    |-- settings.py
