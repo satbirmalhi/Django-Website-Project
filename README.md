@@ -74,9 +74,9 @@ A makefile is a special file, containing shell commands, that you create and nam
 * Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
 * Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
 ##### The updated project directory should look like this:
-```
+```bash
  Website-Project 
-    |--<MathMeUp_website>
+    |-- <MathMeUp_website>
     |    |-- apps
     |    |-- public 
     |    |-- accounts 
@@ -88,9 +88,9 @@ A makefile is a special file, containing shell commands, that you create and nam
     |    |-- settings.py
     |    |-- urls.py
     |    |-- wsgi.py
-    |--requirements
-    |   |--prod.txt
-    |   |--dev.txt
+    |-- requirements
+    |    |-- prod.txt
+    |    |-- dev.txt
     |-- MathMeUp-env
     |-- manange.py
 ```
