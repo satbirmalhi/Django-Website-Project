@@ -116,7 +116,7 @@ SECRET_KEY = config('SECRET_KEY')
 * Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
 * Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
 ##### The updated project directory should look like this:
-
+```zsh
  Website-Project 
     |-- <MathMeUp_website>
     |    |-- apps
@@ -143,7 +143,7 @@ SECRET_KEY = config('SECRET_KEY')
     |-- Makefile
     |-- manange.py
     |-- README.md
-
+```
 ##### What are Routes and how to configure.  
 
 
