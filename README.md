@@ -42,15 +42,15 @@
   ```zsh
   Website-Project
     |-- <MathMeUp_website>
-    |   |--_init_py
-    |   |-- asgi.py
-    |   |-- settings.py
-    |   |-- urls.py
-    |   |--wsgi.py
+    |       |--_init_py
+    |       |-- asgi.py
+    |       |-- settings.py
+    |       |-- urls.py
+    |       |--wsgi.py
     |-- <MathMeUp-env>
     |-- requirements
-        |-- prod.txt
-        |-- dev.txt
+            |-- prod.txt
+            |-- dev.txt
     |--.gitignore
     |-- manange.py
     |-- READEME.md
