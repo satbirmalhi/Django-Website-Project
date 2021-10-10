@@ -145,41 +145,47 @@ SECRET_KEY = config('SECRET_KEY')
     |-- README.md
 ```
 ##### What are Routes and how to configure.  
-1. In Setting.py add the following setting: `import os` `PROJECT_DIR = os.path.join(BASE_DIR, "Website")` `"DIRS": [os.path.join(PROJECT_DIR,` "templates")],
-2. In the urls.py(base folder) paste the following codes:  
-```
-from django.contrib import admin
-from django.urls import path, include
-from django.contrib.auth import views as auth_views
-urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("Website.apps.public.urls")),
-     ]
-```
+1. In Settings.py add the following setting: 
+    *  Setting the project directory path. Write this below Base Dir
+    ```
+    import os
+    PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
+    ```
+    * In Templaes replace "DIRS" with the follwong codes:
+        ```"DIRS": [os.path.join(PROJECT_DIR,` "templates")],```
+2. In the urls.py (of the base folder) paste the following codes:  
+    ```
+    from django.contrib import admin
+    from django.urls import path, include
+    from django.contrib.auth import views as auth_views
+        urlpatterns = [
+            path("admin/", admin.site.urls),
+            path("", include("MathMeUp_website.apps.public.urls")),
+        ]
+    ```
 2. Go to apps folder and then public app. There creare a file named urls.y and paste the following codes:
-```
-from django.urls import path
-from . import views
 
-app_name = "public"
-urlpatterns = [
-    path("", views.index, name="index"),
-    path("about", views.about, name="about"),
+    ```
+    from django.urls import path
+    from . import views
     
-]
-```
+        app_name = "public"
+        urlpatterns = [
+        path("", views.index, name="index"),
+        path("about", views.about, name="about"),
+    
+        ]
+    ```
 3. Now open views.py of public app and paste the following code
 
-```
-from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
+    ```
+    from django.http import HttpResponse, HttpRequest
+    from django.shortcuts import render
 
-def index(request: HttpRequest) -> HttpResponse:
-    return render(request, "index.html")
-
-
-def about(request: HttpRequest) -> HttpResponse:
-    return render(request, "about.html")
+        def index(request: HttpRequest) -> HttpResponse:
+            return render(request, "index.html")
+        def about(request: HttpRequest) -> HttpResponse:
+                return render(request, "about.html")
 ```
 
 
