@@ -19,8 +19,9 @@
 * Check all the package in your global machine: `pip3 list` 
 * Check: `virtualenv --version` 
 * `virtualenv -p python3.9 <name_of_virtualenv>`
-* Activate: `source ./<name_of_virtualenv>/bin/activate`d
+* Activate: `source ./<name_of_virtualenv>/bin/activate`
 * Check which python is active: `which python `
+* Create a gitignore file and copy paste <name_of_virtualenv> in it: `touch .gitignore` `echo "<name_of_virtualenv>" .gitignore`
 * Deactivate when switch to another the application: `deactivate`
 ----------------------------------------------------------------------------------
 ### [Django homepage](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#overview)
@@ -35,22 +36,30 @@
 4. Copy all the prod requirements to dev.txt: `echo '-r prod.txt' > dev.txt`
 5. Check: `cat prod.txt` and `cat dev.txt`
 6. Create Dajango project: `djando-admin startproject {Website_name}` . Make sure to run this command in your website folder:
-7. Now arrange folders as list below. 
+
 ------------------------------------------------------------------------------------
-##### The updated project directory should look like this:
-* Website-Project 
-    * <MathMeUp_website>
-        * _init_py
-        * asgi.py
-        * settings.py
-        * urls.py
-        * wsgi.py
-    * requirements
-    * manange.py
+##### Now arrange folders as list below. 
+  ```zsh
+  Website-Project
+    |-- <MathMeUp_website>
+    |   |--_init_py
+    |   |-- asgi.py
+    |   |-- settings.py
+    |   |-- urls.py
+    |   |--wsgi.py
+    |-- <MathMeUp-env>
+    |-- requirements
+        |-- prod.txt
+        |-- dev.txt
+    |--.gitignore
+    |-- manange.py
+    |-- READEME.md
+```
 
 ------------------------------------------------------------------------------------
 ##### How to run website on local server
 * `python manage.py runserver `
+    * this command has created a data base with the name db.sqlite3. Copy the name of this data base in .gitignore file. 
 ##### Create Makefile file:
 A makefile is a special file, containing shell commands, that you create and name makefile (or Makefile depending upon the system). ... A makefile that works well in one shell may not execute properly in another shell
 * `touch Makefile`
@@ -59,40 +68,127 @@ A makefile is a special file, containing shell commands, that you create and nam
         python manage.py runserver <hostname, example 0.0.0.0:80>```
 * Now go to terminal and start the server with the command: `Make Runserver`
 ##### Hide your SECRET_KEY:
+1. Install python-decouple to create a local project environment to store your secret key.
+    ```pip install python-decouple```
+2. Create a .env file in your base directory (where manage.py is).
+
+ ```zsh
+  Website-Project
+    |-- <MathMeUp_website>
+    |   |--_init_py
+    |   |-- asgi.py
+    |   |-- settings.py
+    |   |-- urls.py
+    |   |--wsgi.py
+    |-- <MathMeUp-env>
+    |-- requirements
+    |-- db.sqlite3
+    |-- .env
+    |--.gitignore
+    |--manange.py
+    |-- README.md
+```
+3. Add .env to your .gitignore file.
+``` open your .gitignore and type in .env```
+4. Add your SECRET_KEY from your settings.py file into the .env file like so (without quotes)
+```
+**Inside of your .env file** 
+SECRET_KEY=qolwvjicds5p53gvojw&a^&c4&16ou7 # <- Example key, SECRET_KEY=yoursecretkey
+```
+5. Inside of your settings.py file, add the following settings:
+```
+from decouple import config
+SECRET_KEY = config('SECRET_KEY')
+```
+6. Check if all is working fine: `Make runserver`
+
+
   
-
-
 ##### Create basic folder and files for templating
-* Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps'
-* Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates'
+* Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps`
+* Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates`
     * In templates create the following files: `touch about.html`,`touch base.html`,`touch contact.html`,`touch footer.html`,`touch index.html`,`touch navbar.html`
 
 ##### How to create App:
-* `mkdir apps` 
-* Cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name: __init__.py.
+* Cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name:`touch __init__.py`.
+*  Go back to your base directory (where manage.py is).
 * Run this commad to create a app named public: `python3 manage.py startapp public <path to public folder>`
 * Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
 * Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
 ##### The updated project directory should look like this:
-* Website-Project 
-    * <MathMeUp_website>
-        * apps
-            * public 
-            * accounts
-            * contact
-        * templates
-            * about.html, base.html, footer.html, index,html, navbar.html
-        * _init_py
-        * asgi.py
-        * settings.py
-        * urls.py
-        * wsgi.py
-    * requirements
-        * prod.txt
-        * dev.txt
-    * MathMeUp-env
-    * manange.py
+```zsh
+ Website-Project 
+    |-- <MathMeUp_website>
+    |    |-- apps
+    |        |-- public 
+             |  |- migrations, __init__,admin.py,apps.py,models.py,tests.py,views.py
+    |        |-- accounts 
+             |  |-- migrations, __init__,admin.py,apps.py,models.py,tests.py,views.py,
+    |        |-- contact
+             |  |--|migrations, __init__,admin.py,apps.py,models.py,tests.py,views.py,
+    |    |-- templates
+    |       |-- about.html, base.html, contact.html footer.html, index,html, navbar.html
+    |    |-- _init_py
+    |    |-- asgi.py
+    |    |-- settings.py
+    |    |-- urls.py
+    |    |-- wsgi.py
+    |-- <MathMeUP-env>
+    |-- requirements
+    |    |-- prod.txt
+    |    |-- dev.txt
+    |--.gitignore
+    |-- db.sqlite3
+    |--.env
+    |-- Makefile
+    |-- manange.py
+    |-- README.md
+```
 ##### What are Routes and how to configure.  
+1. In Settings.py add the following setting: 
+    *  Setting the project directory path. Write this below Base Dir
+    ```
+    import os
+    PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
+    ```
+    * In Templaes replace "DIRS" with the follwong codes:
+        ```"DIRS": [os.path.join(PROJECT_DIR,` "templates")],```
+2. In the urls.py (of the base folder) paste the following codes:  
+    ```
+    from django.contrib import admin
+    from django.urls import path, include
+    from django.contrib.auth import views as auth_views
+        urlpatterns = [
+            path("admin/", admin.site.urls),
+            path("", include("MathMeUp_website.apps.public.urls")),
+        ]
+    ```
+2. Go to apps folder and then public app. There creare a file named urls.y and paste the following codes:
+
+    ```
+    from django.urls import path
+    from . import views
+    
+        app_name = "public"
+        urlpatterns = [
+        path("", views.index, name="index"),
+        path("about", views.about, name="about"),
+    
+        ]
+    ```
+3. Now open views.py of public app and paste the following code
+
+    ```
+    from django.http import HttpResponse, HttpRequest
+    from django.shortcuts import render
+
+        def index(request: HttpRequest) -> HttpResponse:
+            return render(request, "index.html")
+        def about(request: HttpRequest) -> HttpResponse:
+                return render(request, "about.html")
+```
+
+
 
 
 ##### Static front: 
