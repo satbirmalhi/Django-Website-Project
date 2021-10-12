@@ -105,16 +105,16 @@ SECRET_KEY = config('SECRET_KEY')
 
   
 ##### Create basic folder and files for templating
-* Create a folder with named apps in MathMeup_wesbite directory: `Mkdir apps`
-* Create another folder with named templates in MathMeup_wesbite directory: `mkdir templates`
-    * In templates create the following files: `touch about.html`,`touch base.html`,`touch contact.html`,`touch footer.html`,`touch index.html`,`touch navbar.html`
+* Create a folder with name apps in MathMeup_wesbite directory: `Mkdir apps`
+* Create another folder with name templates in MathMeup_wesbite directory: `mkdir templates`
+    * In templates folder create the following files: `touch about.html`,`touch base.html`,`touch contact.html`,`touch footer.html`,`touch index.html`,`touch navbar.html`
 
 ##### How to create App:
-* Cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name:`touch __init__.py`.
+* cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name:`touch __init__.py`.
 *  Go back to your base directory (where manage.py is).
-* Run this commad to create a app named public: `python3 manage.py startapp public <path to public folder>`
-* Run this commad to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
-* Run this commad to create a app named contact: `python3 manage.py startapp public <path to accounts folder>`
+* Run this command to create a app named public: `python3 manage.py startapp public <path to public folder>`
+* Run this command to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
+* Run this command to create a app named contact: `python3 manage.py startapp contact <path to accounts folder>`
 ##### The updated project directory should look like this:
 ```zsh
  Website-Project 
@@ -151,28 +151,28 @@ SECRET_KEY = config('SECRET_KEY')
     import os
     PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
     ```
-    * In Templaes replace "DIRS" with the follwong codes:
-        ```"DIRS": [os.path.join(PROJECT_DIR,` "templates")],```
+    * Go into settings.py file and then inside  Templates replace "DIRS" with the follwing codes:
+        ```"DIRS": [os.path.join(PROJECT_DIR, "templates")],```
 2. In the urls.py (of the base folder) paste the following codes:  
     ```
-    from django.contrib import admin
-    from django.urls import path, include
-    from django.contrib.auth import views as auth_views
-        urlpatterns = [
-            path("admin/", admin.site.urls),
-            path("", include("MathMeUp_website.apps.public.urls")),
-        ]
+from django.contrib import admin
+from django.urls import path, include
+from django.contrib.auth import views as auth_views
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("MathMeUp_website.apps.public.urls")),
+    ]
     ```
 2. Go to apps folder and then public app. There creare a file named urls.y and paste the following codes:
 
     ```
-    from django.urls import path
-    from . import views
+from django.urls import path
+from . import views
     
-        app_name = "public"
-        urlpatterns = [
-        path("", views.index, name="index"),
-        path("about", views.about, name="about"),
+app_name = "public"
+urlpatterns = [
+    path("", views.index, name="index"),
+    path("about", views.about, name="about"),
     
         ]
     ```
@@ -182,9 +182,9 @@ SECRET_KEY = config('SECRET_KEY')
     from django.http import HttpResponse, HttpRequest
     from django.shortcuts import render
 
-        def index(request: HttpRequest) -> HttpResponse:
+    def index(request: HttpRequest) -> HttpResponse:
             return render(request, "index.html")
-        def about(request: HttpRequest) -> HttpResponse:
+    def about(request: HttpRequest) -> HttpResponse:
                 return render(request, "about.html")
 ```
 
