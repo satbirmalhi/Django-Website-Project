@@ -191,7 +191,8 @@ urlpatterns = [
 
 
 
-##### Static front: 
+##### [Static front using Boot](): 
+
 
 ##### Confifure Accounts page 
 ##### Data migration
