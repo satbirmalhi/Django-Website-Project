@@ -147,14 +147,14 @@ SECRET_KEY = config('SECRET_KEY')
 ##### What are Routes and how to configure.  
 1. In Settings.py add the following setting: 
     *  Setting the project directory path. Write this below Base Dir
-    ```
-    import os
-    PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
-    ```
+```
+import os
+PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
+```
     * Go into settings.py file and then inside  Templates replace "DIRS" with the follwing codes:
         ```"DIRS": [os.path.join(PROJECT_DIR, "templates")],```
 2. In the urls.py (of the base folder) paste the following codes:  
-    ```
+```
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
@@ -162,10 +162,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("MathMeUp_website.apps.public.urls")),
     ]
-    ```
+```
 2. Go to apps folder and then public app. There creare a file named urls.y and paste the following codes:
 
-    ```
+```
 from django.urls import path
 from . import views
     
@@ -175,23 +175,32 @@ urlpatterns = [
     path("about", views.about, name="about"),
     
         ]
-    ```
+```
 3. Now open views.py of public app and paste the following code
 
-    ```
-    from django.http import HttpResponse, HttpRequest
-    from django.shortcuts import render
+```
+from django.http import HttpResponse, HttpRequest
+from django.shortcuts import render
 
-    def index(request: HttpRequest) -> HttpResponse:
-            return render(request, "index.html")
-    def about(request: HttpRequest) -> HttpResponse:
-                return render(request, "about.html")
+def index(request: HttpRequest) -> HttpResponse:
+        return render(request, "index.html")
+def about(request: HttpRequest) -> HttpResponse:
+        return render(request, "about.html")
 ```
 
 
 
 
-##### [Static front using Boot](): 
+##### [Static front using BootStrap]: 
+1. Go to [bootstrap freelance website](https://startbootstrap.com/theme/freelancer) and download freelance website design 
+2. Create a folder with name static(in base directory where manage.py file is)
+3. Create a another folder inside of static with name theme 
+4. Copy and paste all the file from your freelance folder (which you just downloaded from bootstrap website) into theme folder 
+5. Go into settings.py file and configure the following path below static_url
+```
+STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
+```
+
 
 
 ##### Confifure Accounts page 
