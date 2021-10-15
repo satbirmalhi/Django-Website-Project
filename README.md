@@ -191,7 +191,7 @@ def about(request: HttpRequest) -> HttpResponse:
 
 
 
-##### [Static front using BootStrap]: 
+##### [Static front using BootStrap](): 
 1. Go to [bootstrap freelance website](https://startbootstrap.com/theme/freelancer) and download freelance website design 
 2. Create a folder with name static(in base directory where manage.py file is)
 3. Create a another folder inside of static with name theme 
@@ -200,6 +200,42 @@ def about(request: HttpRequest) -> HttpResponse:
 ```
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 ```
+6. Attachihng index, base, nav, and footer 
+    * index.html
+    ```
+    {% extends "base.html" %}
+    {% load static %}
+
+    {% block title %} 
+    Home Page  
+    {% endblock %}
+
+    {% block content %}
+    This is boday 
+    {% endblock %}
+    ```
+    * base.html
+    ```
+    {% load static %}
+    <!-- Tamplates/base.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        {% block title %}   {% endblock %}
+    </head>
+    <body>
+    {% include 'navbar.html'%}
+    <main id="main">
+    {% block content%}   {% endblock %}
+    </main>
+    {% include 'footer.html'%}
+    </body>
+    </html>
+    ```
+7. Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
+
+
+ 
 
 
 

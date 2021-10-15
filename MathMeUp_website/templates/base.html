@@ -1,22 +1,28 @@
 {% load static %}
 <!-- Tamplates/base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+
 <head>
-    <meta charset="UTF-8">
-     <title>
-        {% block title %}Sav{% endblock %}
-     </title>
-     
-  
+    {% block title %}   {% endblock %}
 </head>
+
+
+
 
 <body>
 {% include 'navbar.html'%}
 <main id="main">
-{% block content%}
-{% endblock %}
+{% block content%}   {% endblock %}
+</main>
 {% include 'footer.html'%}
 </body>
+
+
+
+
+
 </html>
