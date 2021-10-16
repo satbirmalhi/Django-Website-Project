@@ -235,8 +235,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     
       ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `{% load static %}`
     
-    ```diff
-    <head>
+    
+    git<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -250,7 +250,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     <!-- Core theme CSS (includes Bootstrap)-->
     ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `<font color="red"> <link href="{% static 'theme/css/styles.css' %}"` rel="stylesheet" /> </font>
     </head>
-    ```
+    
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 - ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
 - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
