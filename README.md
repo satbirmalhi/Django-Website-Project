@@ -251,10 +251,24 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
         <link href="css/styles.css" rel="stylesheet" />
         </head>
     ```
-        * update the followind code 
-            * add: `{% load static %}`
-            * change: `<link href="css/styles.css"` into `<link href="{% static "theme/css/styles.css"%}"`
-            * delete: ` <!-- Favicon--> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />`
+    * update the followind code 
+        * add: `{% load static %}`
+        * change: `<link href="css/styles.css"` into `<link href="{% static "theme/css/styles.css"%}"`
+        * delete: ` <!-- Favicon--> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />`
+    * copy the following codes from index.htm of static folder and paste into base.html
+
+    ```
+    <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    ```
+    * Change: <script src="js/scripts.js"></script> into <script src="{% static "theme/js/scripts.js" %}"></script>
 
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 - ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
