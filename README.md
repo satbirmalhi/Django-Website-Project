@@ -204,8 +204,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     * index.html
     ```
     {% extends "base.html" %}
-    {% load static %}
-
     {% block title %} 
     Home Page  
     {% endblock %}
@@ -213,16 +211,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     {% block content %}
     This is boday 
     {% endblock %}
+
     ```
     * base.html
     ```
     {% load static %}
-    <!-- Tamplates/base.html -->
-    <!DOCTYPE html>
-    <html lang="en">
+    
     <head>
         {% block title %}   {% endblock %}
     </head>
+
     <body>
     {% include 'navbar.html'%}
     <main id="main">
@@ -234,8 +232,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     ```
 7. Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
     * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
-    ```
     <font color="red"> {% load static %} </font>
+    ```
     <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
