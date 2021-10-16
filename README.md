@@ -233,8 +233,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 7. Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
     * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
     
-      ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `{% load static %}`
-    
     ```
     <head>
         <meta charset="utf-8" />
@@ -251,13 +249,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-    </head>
+        </head>
     ```
         * update the followind code 
             * add: `{% load static %}`
             * change: `<link href="css/styles.css"` into `<link href="{% static "theme/css/styles.css"%}"`
             * delete: ` <!-- Favicon--> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />`
-            
+
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 - ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
 - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
