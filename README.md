@@ -292,7 +292,113 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
             </div>
         </nav>
     ```
+10. ### body 
+    * copy the followig codes from index.html file of static folder  and paste in index.html of template folder 
+    ```
+    <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+            </div>
+        </header>
+    ```
+11. ### Footer
+    * same as above 
+12. ### Overiding style 
+    * Inside of static folder create a folder with name css: `mkdir css` and inside css folder create a file named main.css: `touch main.css`
+    * paste the followind into main.css file 
+``` #main {
+    padding-top: calc(74px);
+}
 
+
+@media (min-width: 992px) {
+  #main {
+    padding-top: calc(104px);
+    
+  }
+}
+@font-face {
+  font-family: 'DaTAanalytics';
+  src: url(fonts/jaapokkisubtract-regular-webfont.woff) format("woff"),
+  url(fonts/Jaapokkisubtract-Regular.otf) format("onetype");
+  }
+.navbar-brand{
+  font-family: 'DaTAanalytics';
+}
+
+.hs-bg-primary {
+  background-color:crimson;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .2s, color .2s;
+
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color:#f35a5a;
+  border-color: crimson;
+
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:active {
+  background: none;
+  color:white;
+  border-color: crimson;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    background: none;
+    color: #bc1a22;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+  color: #fff;
+  background: none;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  color: #fff;
+  background:none;
+}
+
+.masthead .masthead-avatar {
+  width: 110px;
+  height: 110;
+}
+img {
+  border-radius: 50%;
+}
+
+.masthead {
+  padding-top: 6rem;
+  padding-bottom: 16rem;
+  
+}
+@media (min-width: 992px) {
+  #masthead {
+    padding-top: 6rem;
+    padding-bottom: 16rem;
+    }
+}
+.masthead {
+  background-image: url("../img/bg.jpeg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.masthead .masthead-heading {
+  font-size: 1.4rem;
+  line-height: 1.4em;
+}
+```
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 - ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
 - ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
