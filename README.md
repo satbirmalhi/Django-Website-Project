@@ -235,7 +235,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     
     <span style="color: red"> Some green text </span>
     
-    ```
+    ```diff
     <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -249,8 +249,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <font color="red"> <link href="{% static 'theme/css/styles.css' %}" rel="stylesheet" /> </font>
-</head>
+    </head>
     ```
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
+- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
 
 
  
