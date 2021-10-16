@@ -4,16 +4,16 @@
 
 
 @media (min-width: 992px) {
-  #main {
+ #main {
     padding-top: calc(104px);
     
   }
 }
-@font-face {
+/* @font-face {
   font-family: 'DaTAanalytics';
   src: url(fonts/jaapokkisubtract-regular-webfont.woff) format("woff"),
   url(fonts/Jaapokkisubtract-Regular.otf) format("onetype");
-  }
+  } */
 .navbar-brand{
   font-family: 'DaTAanalytics';
 }
@@ -70,7 +70,7 @@ img {
     }
 }
 .masthead {
-  background-image: url("../img/bg.jpeg") ;
+  background-image: url("../img/backgroundimage.jpeg") ;
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -317,6 +317,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     * same as above 
 12. ### Overiding style 
     * Inside of static folder create a folder with name css: `mkdir css` and inside css folder create a file named main.css: `touch main.css`
+    * Make anothe folder with name img :`mkdir img` and add your background and logo picture you want to use in your website.
     * paste the followind into main.css file 
 ``` #main {
     padding-top: calc(74px);
@@ -399,9 +400,7 @@ img {
   line-height: 1.4em;
 }
 ```
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `#c5f015`
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+) `#1589F0`
+
 
 
  
