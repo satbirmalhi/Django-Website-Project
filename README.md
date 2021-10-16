@@ -248,7 +248,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <font color="red"> <link href="{% static 'theme/css/styles.css' %}" rel="stylesheet" /> </font>
+    ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `<font color="red"> <link href="{% static 'theme/css/styles.css' %}"` rel="stylesheet" /> </font>
     </head>
     ```
 - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
