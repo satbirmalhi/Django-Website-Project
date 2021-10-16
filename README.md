@@ -147,14 +147,14 @@ SECRET_KEY = config('SECRET_KEY')
 ##### What are Routes and how to configure.  
 1. In Settings.py add the following setting: 
     *  Setting the project directory path. Write this below Base Dir
-    ```
-    import os
-    PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
-    ```
+```
+import os
+PROJECT_DIR = os.path.join(BASE_DIR, "<MathMeUp_website>")
+```
     * Go into settings.py file and then inside  Templates replace "DIRS" with the follwing codes:
         ```"DIRS": [os.path.join(PROJECT_DIR, "templates")],```
 2. In the urls.py (of the base folder) paste the following codes:  
-    ```
+```
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
@@ -162,10 +162,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("MathMeUp_website.apps.public.urls")),
     ]
-    ```
+```
 2. Go to apps folder and then public app. There creare a file named urls.y and paste the following codes:
 
-    ```
+```
 from django.urls import path
 from . import views
     
@@ -175,23 +175,236 @@ urlpatterns = [
     path("about", views.about, name="about"),
     
         ]
-    ```
+```
 3. Now open views.py of public app and paste the following code
 
-    ```
-    from django.http import HttpResponse, HttpRequest
-    from django.shortcuts import render
+```
+from django.http import HttpResponse, HttpRequest
+from django.shortcuts import render
 
-    def index(request: HttpRequest) -> HttpResponse:
-            return render(request, "index.html")
-    def about(request: HttpRequest) -> HttpResponse:
-                return render(request, "about.html")
+def index(request: HttpRequest) -> HttpResponse:
+        return render(request, "index.html")
+def about(request: HttpRequest) -> HttpResponse:
+        return render(request, "about.html")
 ```
 
 
 
 
-##### [Static front using Boot](): 
+##### [Static front using BootStrap](): 
+1. Go to [bootstrap freelance website](https://startbootstrap.com/theme/freelancer) and download freelance website design 
+2. Create a folder with name static(in base directory where manage.py file is)
+3. Create a another folder inside of static with name theme 
+4. Copy and paste all the file from your freelance folder (which you just downloaded from bootstrap website) into theme folder 
+5. Go into settings.py file and configure the following path below static_url
+```
+STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
+```
+6. Attachihng index, base, nav, and footer 
+    * index.html
+    ```
+    {% extends "base.html" %}
+    {% block title %} 
+    Home Page  
+    {% endblock %}
+
+    {% block content %}
+    This is boday 
+    {% endblock %}
+
+    ```
+    * base.html
+    ```
+    {% load static %}
+    
+    <head>
+        {% block title %}   {% endblock %}
+    </head>
+
+    <body>
+    {% include 'navbar.html'%}
+    <main id="main">
+    {% block content%}   {% endblock %}
+    </main>
+    {% include 'footer.html'%}
+    </body>
+    </html>
+    ```
+7. ### base.html
+    * Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
+    * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
+    
+    ```
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Freelancer - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        </head>
+    ```
+     * update the followind code 
+        * add: `{% load static %}`
+        * change: `<link href="css/styles.css"` into `<link href="{% static "theme/css/styles.css"%}"`
+        * delete: ` <!-- Favicon--> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />`
+     * copy the following codes from index.htm of static folder and paste into base.html
+
+    ```
+    <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    ```
+     * Change: `<script src="js/scripts.js"></script>` into `<script src="{% static "theme/js/scripts.js" %}"></script>`
+8. Inspect the page and make sure all the files loaded properly 
+9. ### Navbar 
+    * copy and paste the code from index.html into navbar.html and update the required changes as mentioned in the video. 
+    ```
+    <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    ```
+10. ### body 
+    * copy the followig codes from index.html file of static folder  and paste in index.html of template folder 
+    ```
+    <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+            </div>
+        </header>
+    ```
+11. ### Footer
+    * same as above 
+12. ### Overiding style 
+    * Inside of static folder create a folder with name css: `mkdir css` and inside css folder create a file named main.css: `touch main.css`
+    * Make anothe folder with name img :`mkdir img` and add your background and logo picture you want to use in your website.
+    * paste the followind into main.css file 
+``` #main {
+    padding-top: calc(74px);
+}
+
+
+@media (min-width: 992px) {
+  #main {
+    padding-top: calc(104px);
+    
+  }
+}
+@font-face {
+  font-family: 'DaTAanalytics';
+  src: url(fonts/jaapokkisubtract-regular-webfont.woff) format("woff"),
+  url(fonts/Jaapokkisubtract-Regular.otf) format("onetype");
+  }
+.navbar-brand{
+  font-family: 'DaTAanalytics';
+}
+
+.hs-bg-primary {
+  background-color:crimson;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .2s, color .2s;
+
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color:#f35a5a;
+  border-color: crimson;
+
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:active {
+  background: none;
+  color:white;
+  border-color: crimson;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    background: none;
+    color: #bc1a22;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+  color: #fff;
+  background: none;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  color: #fff;
+  background:none;
+}
+
+.masthead .masthead-avatar {
+  width: 110px;
+  height: 110;
+}
+img {
+  border-radius: 50%;
+}
+
+.masthead {
+  padding-top: 6rem;
+  padding-bottom: 16rem;
+  
+}
+@media (min-width: 992px) {
+  #masthead {
+    padding-top: 6rem;
+    padding-bottom: 16rem;
+    }
+}
+.masthead {
+  background-image: url("../img/bg.jpeg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.masthead .masthead-heading {
+  font-size: 1.4rem;
+  line-height: 1.4em;
+}
+```
+
+
+
+ 
+
 
 
 ##### Confifure Accounts page 
