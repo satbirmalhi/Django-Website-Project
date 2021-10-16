@@ -233,6 +233,24 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     </html>
     ```
 7. Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
+    * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
+    ```
+    <font color="red"> {% load static %} </font>
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title> {% block title %}   {% endblock %}</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <font color="red"> <link href="{% static 'theme/css/styles.css' %}" rel="stylesheet" /> </font>
+</head>
+    ```
 
 
  
