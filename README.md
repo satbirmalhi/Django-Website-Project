@@ -232,7 +232,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     ```
 7. Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
     * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
-    <font color="red"> {% load static %} </font>
+    
+    <span style="color: red"> Some green text </span>
+    
     ```
     <head>
     <meta charset="utf-8" />
