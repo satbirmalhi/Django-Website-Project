@@ -230,7 +230,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     </body>
     </html>
     ```
-7. Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
+7. ### base.html
+    * Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
     * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
     
     ```
