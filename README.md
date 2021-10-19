@@ -215,8 +215,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     ```
     * base.html
     ```
-    {% load static %}
-    
     <head>
         {% block title %}   {% endblock %}
     </head>
@@ -317,7 +315,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     * Inside of static folder create a folder with name css: `mkdir css` and inside css folder create a file named main.css: `touch main.css`
     * Make anothe folder with name img :`mkdir img` and add your background and logo picture you want to use in your website.
     * paste the followind into main.css file 
-``` #main {
+    
+``` 
+#main {
     padding-top: calc(74px);
 }
 
