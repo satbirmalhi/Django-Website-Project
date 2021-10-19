@@ -191,9 +191,9 @@ def about(request: HttpRequest) -> HttpResponse:
 
 
 
-##### [Static front using BootStrap](): 
+#### [Static front using BootStrap](): 
 1. Go to [bootstrap freelance website](https://startbootstrap.com/theme/freelancer) and download freelance website design 
-2. Create a folder with name static(in base directory where manage.py file is)
+2. Create a folder with name static (in base directory where manage.py file is)
 3. Create a another folder inside of static with name theme 
 4. Copy and paste all the file from your freelance folder (which you just downloaded from bootstrap website) into theme folder 
 5. Go into settings.py file and configure the following path below static_url
@@ -231,7 +231,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     </html>
     ```
 7. ### base.html
-    * Next we will copy and past code from freelancer theme to our main html files. Follows the next steps on this [video]()
     * Copy the following codes from index.htm (of static folder) and past into base.html (of templates folder)
     
     ```
@@ -257,8 +256,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
         * change: `<link href="css/styles.css"` into `<link href="{% static "theme/css/styles.css"%}"`
         * delete: ` <!-- Favicon--> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />`
      * copy the following codes from index.htm of static folder and paste into base.html
-
-    ```
+  ```
     <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
