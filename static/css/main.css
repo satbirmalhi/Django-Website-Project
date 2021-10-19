@@ -9,14 +9,14 @@
     
   }
 }
-@font-face {
+/* @font-face {
   font-family: 'DaTAanalytics';
   src: url(fonts/jaapokkisubtract-regular-webfont.woff) format("woff"),
   url(fonts/Jaapokkisubtract-Regular.otf) format("onetype");
   }
 .navbar-brand{
   font-family: 'DaTAanalytics';
-}
+} */
 
 .hs-bg-primary {
   background-color:crimson;
@@ -68,9 +68,10 @@ img {
     padding-top: 6rem;
     padding-bottom: 16rem;
     }
-}
+
+  }
 .masthead {
-  background-image: url("./static/img/backgroudimage.jpeg") ;
+  background-image: url("../img/backgroundimage.jpeg") ;
   background-repeat: no-repeat;
   background-size: cover;
 }
