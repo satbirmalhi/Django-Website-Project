@@ -254,7 +254,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
         * change: `<link href="css/styles.css"` into `<link href="{% static "theme/css/styles.css"%}"`
         * delete: ` <!-- Favicon--> <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />`
      * copy the following codes from index.htm of static folder and paste into base.html
-  ```
+
+```
     <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -264,7 +265,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    ```
+```
      * Change: `<script src="js/scripts.js"></script>` into `<script src="{% static "theme/js/scripts.js" %}"></script>`
 8. Inspect the page and make sure all the files loaded properly 
 9. ### Navbar 
@@ -315,7 +316,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
     * Inside of static folder create a folder with name css: `mkdir css` and inside css folder create a file named main.css: `touch main.css`
     * Make anothe folder with name img :`mkdir img` and add your background and logo picture you want to use in your website.
     * paste the followind into main.css file 
-    
+
 ``` 
 #main {
     padding-top: calc(74px);
