@@ -399,6 +399,7 @@ img {
   line-height: 1.4em;
 }
 ```
+  * Add these code into base file: ` <link href="{% static "css/main.css" %}" rel="stylesheet" />`
 
 
 

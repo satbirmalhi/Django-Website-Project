@@ -1,0 +1,80 @@
+#main {
+    padding-top: calc(74px);
+}
+
+
+@media (min-width: 992px) {
+  #main {
+    padding-top: calc(104px);
+    
+  }
+}
+@font-face {
+  font-family: 'DaTAanalytics';
+  src: url(fonts/jaapokkisubtract-regular-webfont.woff) format("woff"),
+  url(fonts/Jaapokkisubtract-Regular.otf) format("onetype");
+  }
+.navbar-brand{
+  font-family: 'DaTAanalytics';
+}
+
+.hs-bg-primary {
+  background-color:crimson;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .2s, color .2s;
+
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color:#f35a5a;
+  border-color: crimson;
+
+}
+#mainNav .navbar-nav li.nav-item a.nav-link:active {
+  background: none;
+  color:white;
+  border-color: crimson;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    background: none;
+    color: #bc1a22;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+  color: #fff;
+  background: none;
+}
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  color: #fff;
+  background:none;
+}
+
+.masthead .masthead-avatar {
+  width: 110px;
+  height: 110;
+}
+img {
+  border-radius: 50%;
+}
+
+.masthead {
+  padding-top: 6rem;
+  padding-bottom: 16rem;
+  
+}
+@media (min-width: 992px) {
+  #masthead {
+    padding-top: 6rem;
+    padding-bottom: 16rem;
+    }
+}
+.masthead {
+  background-image: url("./static/img/backgroudimage.jpeg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.masthead .masthead-heading {
+  font-size: 1.4rem;
+  line-height: 1.4em;
+}
