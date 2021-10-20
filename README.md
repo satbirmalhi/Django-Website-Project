@@ -401,6 +401,11 @@ img {
 ```
   * Add these codes into base file: ` <link href="{% static "css/main.css" %}" rel="stylesheet" />`
 
+  * ##### how to change the font:
+    - Go to the website and download the fronts
+    - Create a folder inside static/css with name fonts and paste the fonts files inside it 
+    - go to static/css/main.css and make your path and name are correct. 
+
 
 
  
