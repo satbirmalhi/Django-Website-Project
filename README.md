@@ -15,7 +15,7 @@
       - `git checkout <name of the branch> ./README.md`ls
 
 ----------------------------------------------------------------------------------
-### [Install Virtual Environment](https://virtualenv.pypa.io/en/latest/installation.html)
+## [Install Virtual Environment](https://virtualenv.pypa.io/en/latest/installation.html)
 * Install:  brew and update it
 * `pip3  install virtualenv`
 * Check all the package in your global machine: `pip3 list` 
@@ -26,8 +26,8 @@
 * Create a gitignore file and copy paste <name_of_virtualenv> in it: `touch .gitignore` `echo "<name_of_virtualenv>" .gitignore`
 * Deactivate when switch to another the application: `deactivate`
 ----------------------------------------------------------------------------------
-### [Django homepage](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#overview)
-#### Task 1: Creating Django Project
+## [Django homepage](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website#overview)
+## Task 1: Creating Django Project
 1. Create a folder requirements, then create prod.txt and dev.txt
     * `mkdir requirements`
     * `cd requirements`
@@ -59,17 +59,17 @@
 ```
 
 ------------------------------------------------------------------------------------
-##### How to run website on local server
+### How to run website on local server
 * `python manage.py runserver `
     * this command has created a data base with the name db.sqlite3. Copy the name of this data base in .gitignore file. 
-##### Create Makefile file:
+### Create Makefile file:
 A makefile is a special file, containing shell commands, that you create and name makefile (or Makefile depending upon the system). ... A makefile that works well in one shell may not execute properly in another shell
 * `touch Makefile`
 * Example code to run server with python for Makefile: 
    ```Runserver:
         python manage.py runserver <hostname, example 0.0.0.0:80>```
 * Now go to terminal and start the server with the command: `Make Runserver`
-##### Hide your SECRET_KEY:
+### Hide your SECRET_KEY:
 1. Install python-decouple to create a local project environment to store your secret key.
     ```pip install python-decouple```
 2. Create a .env file in your base directory (where manage.py is).
@@ -106,18 +106,18 @@ SECRET_KEY = config('SECRET_KEY')
 
 
   
-##### Create basic folder and files for templating
+### Create basic folder and files for templating
 * Create a folder with name apps in MathMeup_wesbite directory: `Mkdir apps`
 * Create another folder with name templates in MathMeup_wesbite directory: `mkdir templates`
     * In templates folder create the following files: `touch about.html`,`touch base.html`,`touch contact.html`,`touch footer.html`,`touch index.html`,`touch navbar.html`
 
-##### How to create App:
+## How to create App:
 * cd into apps directory and create three folder: `mkdir public`, `mkdir accounts`, `mkdir contact` and a file with name:`touch __init__.py`.
 *  Go back to your base directory (where manage.py is).
 * Run this command to create a app named public: `python3 manage.py startapp public <path to public folder>`
 * Run this command to create a app named accounts: `python3 manage.py startapp accounts <path to accounts folder>`
 * Run this command to create a app named contact: `python3 manage.py startapp contact <path to accounts folder>`
-##### The updated project directory should look like this:
+### The updated project directory should look like this:
 ```zsh
  Website-Project 
     |-- <MathMeUp_website>
@@ -146,7 +146,7 @@ SECRET_KEY = config('SECRET_KEY')
     |-- manange.py
     |-- README.md
 ```
-##### What are Routes and how to configure.  
+### What are Routes and how to configure.  
 1. In Settings.py add the following setting: 
     *  Setting the project directory path. Write this below Base Dir
 ```
@@ -193,7 +193,7 @@ def about(request: HttpRequest) -> HttpResponse:
 
 
 
-#### [Static front using BootStrap](): 
+### [Static front using BootStrap](): 
 1. Go to [bootstrap freelance website](https://startbootstrap.com/theme/freelancer) and download freelance website design 
 2. Create a folder with name static (in base directory where manage.py file is)
 3. Create a another folder inside of static with name theme 
@@ -495,6 +495,5 @@ img {
         ```
 
 
-##### Data migration
-##### Developy the your website. 
-##### 
+### Developy the website from your laptop 
+### Developy the website on AWS
