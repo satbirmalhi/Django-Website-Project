@@ -20,4 +20,5 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
         path("admin/", admin.site.urls),
         path("", include("MathMeUp_website.apps.public.urls")),
+        path("accounts/", include("MathMeUp_website.apps.accounts.urls")),
     ]

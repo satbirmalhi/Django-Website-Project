@@ -123,6 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
+# Django Auth settings
+LOGIN_URL = "accounts:login"
+LOGIN_REDIRECT_URL = "public:index"
+LOGOUT_REDIRECT_URL = "public:index"
 
 
 # Default primary key field type
