@@ -11,6 +11,8 @@
 * Setup oh my zsh: [Zsh](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
 * Setup git and github:[git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
     * git [cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
+    * some important git command 
+      - `git checkout <name of the branch> ./README.md`ls
 
 ----------------------------------------------------------------------------------
 ### [Install Virtual Environment](https://virtualenv.pypa.io/en/latest/installation.html)
@@ -406,13 +408,93 @@ img {
     - Create a folder inside static/css with name fonts and paste the fonts files inside it 
     - go to static/css/main.css and make your path and name are correct. 
 
-
-
+## How to install Login and Logout app
+  1. Migration of Database: Run : `python manage.py migrate`
+  2. Create directory in templates folder for html files of account app : `mkdir accounts`
+    * cd into the accounts director and create html file for login/logout: `touch log.html`
+  3. Go into "MathMeUp/apps/accounts" and create a urls file: `touch urls.py`
+  5. Add these code in urls file of MathMeup website folder folder
+    ```path("accounts/", include("MathMeUp_website.apps.accounts.urls")),```
+  5. paste these codes into urls.py file 
+  ```
+  from django.urls import path
+  from . import views
+  from django.contrib.auth import views as auth_views
+  
+  app_name = "accounts"
+  urlpatterns = [
+  # Django auth
+    path("login", auth_views.LoginView.as_view(template_name="accounts/login.html"), name="login"),
+    path("logout", auth_views.LogoutView.as_view(), name="logout"),
+    ]
+  ```
+  6. paste these codes in login.htlm
+  ```
+  {% extends "base.html" %}
  
+  {% block title %}Login{% endblock %}
+ 
+  {% block content %}
+  <h2> Login </h2>
+  <form method="post">
+     {% csrf_token %}
+      {{ form.as_p }}      <!--this is django defalut form -->
+     <button type="submit">Login</button>
+     
+  </form>
+
+  {% endblock %}  
+  ```
+  7. Register superuser admin: `python manage.py createsuperuser`
+  8. login using your username and password you just created and you will noticed it will redirected to profile page. you will change this later. 
+  9. ## Django Auth settings
+  ```
+  LOGIN_URL = "accounts:login"
+  LOGIN_REDIRECT_URL = "public:index"
+  LOGOUT_REDIRECT_URL = "public:index"
+  ```
+  
+  10. ## Configure navebar 
+    1. add these code on the top of nav bar 
+    ```
+    {% url 'public:index' as index_url %}
+    {% url 'public:about' as about_url %}
+    {% url 'accounts:profile' as profile_url %}
+    {% url 'accounts:login' as login_url %}
+    {% url 'accounts:logout' as logout_url %}
+    {% url 'contact:contact' as contact_url %}
+    ```
+    2. upade the home spam with: `{% if request.path == index_url %}active{% endif %}" href="{{ index_url}}"`
+    3. Also add if statment of show the profile page when login and not when logout: `{% if user.is_authenticated %}` , `{% else %}`, `{% endif %}`
+
+  11. Making profile:
+      1. Create a html file in template/accounts folder 
+      2. add the path in accounts/urls.py: `path("profile", views.ProfileView.as_view(), name="profile"),`
+      3. add the following codes in accoutns/views.py
+      ```
+      # Create your views here.
+      from django.views.generic.base import TemplateView
+      from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+      class ProfileView(LoginRequiredMixin, TemplateView):
+           template_name = "accounts/profile.html"
+      ```
+      4. add these codes in profile.html
+        ```
+        {% extends "base.html" %}
+ 
+ 
+        {% block title %} Profile {% endblock %}
+ 
+        {% block content %}
+        <h1> 
+        {{user.get_full_name}} (@{{user.username}})
+        </h1>
+        {% endblock  %}
+        ```
 
-##### Confifure Accounts page 
+
 ##### Data migration
 ##### Developy the your website. 
 ##### 
