@@ -411,11 +411,11 @@ img {
 ## How to install Login and Logout app
   1. Migration of Database: Run : `python manage.py migrate`
   2. Create directory in templates folder for html files of account app : `mkdir accounts`
-    * cd into the accounts director and create html file for login/logout: `touch log.html`
+    * cd into the accounts director and create html file for login/logout: `touch login.html`
   3. Go into "MathMeUp/apps/accounts" and create a urls file: `touch urls.py`
-  5. Add these code in urls file of MathMeup website folder folder
-    ```path("accounts/", include("MathMeUp_website.apps.accounts.urls")),```
-  5. paste these codes into urls.py file 
+  
+  4. Paste these codes into urls.py file 
+  
   ```
   from django.urls import path
   from . import views
@@ -428,7 +428,11 @@ img {
     path("logout", auth_views.LogoutView.as_view(), name="logout"),
     ]
   ```
+  5. Add these code in main urls file of the MathMeup website folder
+    ```path("accounts/", include("MathMeUp_website.apps.accounts.urls")),```
+
   6. paste these codes in login.htlm
+
   ```
   {% extends "base.html" %}
  
@@ -445,8 +449,11 @@ img {
 
   {% endblock %}  
   ```
+
   7. Register superuser admin: `python manage.py createsuperuser`
+
   8. login using your username and password you just created and you will noticed it will redirected to profile page. you will change this later. 
+
   9. ## Django Auth settings
   ```
   LOGIN_URL = "accounts:login"
@@ -456,6 +463,7 @@ img {
   
   10. ## Configure navebar 
     1. add these code on the top of nav bar 
+
     ```
     {% url 'public:index' as index_url %}
     {% url 'public:about' as about_url %}
@@ -464,13 +472,17 @@ img {
     {% url 'accounts:logout' as logout_url %}
     {% url 'contact:contact' as contact_url %}
     ```
-    2. upade the home spam with: `{% if request.path == index_url %}active{% endif %}" href="{{ index_url}}"`
-    3. Also add if statment of show the profile page when login and not when logout: `{% if user.is_authenticated %}` , `{% else %}`, `{% endif %}`
 
-  11. Making profile:
+    2. upade the home spam with: `{% if request.path == index_url %}active{% endif %}" href="{{ index_url}}"`
+    3. Also add if statement to show the profile page when login and not when logout is : `{% if user.is_authenticated %}` , `{% else %}`, `{% endif %}`
+
+  11. #### Creating profile page:
+
       1. Create a html file in template/accounts folder 
       2. add the path in accounts/urls.py: `path("profile", views.ProfileView.as_view(), name="profile"),`
+
       3. add the following codes in accoutns/views.py
+
       ```
       # Create your views here.
       from django.views.generic.base import TemplateView
@@ -481,6 +493,7 @@ img {
            template_name = "accounts/profile.html"
       ```
       4. add these codes in profile.html
+      
         ```
         {% extends "base.html" %}
  
